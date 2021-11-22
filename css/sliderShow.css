@@ -1,0 +1,72 @@
+
+:root{
+
+    margin: 0;
+
+    padding: 0;
+    
+    box-sizing: border-box;
+}
+/* 最外層 */
+div.sliderOuterContainer{
+
+    position: relative;
+
+    width: 40vw;
+
+    margin: auto;
+
+    border: 5px solid;
+
+    overflow: hidden;
+}
+
+/* 圖片的外層 */
+div.sliderOuterContainer > div.sliderInnerContainer{
+
+    width: 100%;
+
+    display: flex;
+}
+
+
+div.sliderOuterContainer > div.sliderInnerContainer > img{
+
+    width: 100%;
+}
+
+#preBtn, #nextBtn{
+
+    margin-bottom: 10px;
+
+    position: absolute;
+
+    z-index: 101;
+}
+
+#preBtn{
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    left: 5%;
+
+    cursor: pointer;
+}
+
+#nextBtn{
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    right: 5%;
+
+    cursor: pointer;
+}
+
+#preBtn > i, #nextBtn > i{
+
+    color: red;
+}
