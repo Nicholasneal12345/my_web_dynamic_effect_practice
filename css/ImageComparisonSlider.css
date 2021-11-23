@@ -1,0 +1,116 @@
+:root{
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    background-color: gray;
+}
+
+div.allContainer{
+
+    width: 50vw;
+
+    position: relative;
+
+    margin: auto;
+
+    border: 10px solid #fff;
+
+    overflow: hidden;
+}
+
+div.allContainer > div.imgContainer{
+
+    display: flex;
+}
+
+div.allContainer > div.imgContainer > div{
+
+    height: 427px;
+
+    width: 100%;
+
+    background-repeat: no-repeat;
+}
+
+div.allContainer > div.imgContainer > div:nth-child(2){
+
+    position: absolute;
+
+    width: 100%;
+
+    filter: blur(5px);
+
+    width: 50%;
+
+    height: 100%;
+}
+
+div.allContainer > div.slide{
+
+    position: absolute;
+
+    width: 100%;
+
+    z-index: 101;
+
+    top: 0;
+}
+
+div.allContainer > div.slide > input{
+
+    width: 100%;
+
+    background: none;
+
+    -webkit-appearance: none;
+
+    outline: none;
+
+}
+
+div.allContainer > div.slide > input::-webkit-slider-thumb{
+
+    height: 427px;
+
+    width: 3px;
+
+    background: none;
+
+    -webkit-appearance: none;
+
+    cursor: pointer;
+}
+
+div.allContainer > div.dropLine{
+
+    position: absolute;
+
+    top: 0;
+
+    left: 50%;
+
+    height: 427px;
+
+    width: 1px;
+
+    background: #fff;
+}
+
+div.allContainer > div.dropLine > i{
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    color: #fff;
+
+    cursor: pointer;
+}
