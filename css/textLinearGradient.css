@@ -1,0 +1,100 @@
+
+/* 文字漸層隱藏 */
+div.testContainer{
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    height: 100vh;
+}
+
+div.testContainerItem{
+
+    width: 30vw;
+    
+    border: 5px solid #d09661;
+
+    border-radius: 10px;
+
+    padding: 20px;
+
+    position: relative;
+
+    height: 200px;
+
+    overflow: hidden;
+
+    color: #d09661;
+
+    background-color: gray;
+}
+
+div.active{
+
+    height: auto;
+}
+
+div.linear-gradient{
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100px;
+
+    background-image: linear-gradient(transparent ,gray);
+}
+
+div.active > div.linear-gradient{
+
+    display: none;
+}
+
+button{
+
+    position: absolute;
+
+    top: 20px;
+
+    right: 20px;
+
+    padding: 5px 10px;
+
+    cursor: pointer;
+
+    color: #d09661;
+
+    border: 3px solid #d09661;
+
+    background-color: white;
+
+    border-radius: 10px;
+}
+
+div.active > button{
+
+    color: white;
+
+    background: #d09661;
+
+    border: 3px solid white;
+
+    opacity: 0.5;
+}
+
+button::before{
+
+    content: "READ MORE";
+}
+
+div.active > button::before{
+
+    content: "READ LESS";
+}
