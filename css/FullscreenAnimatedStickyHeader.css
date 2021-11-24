@@ -1,0 +1,99 @@
+body{
+
+    min-height: 1000px;
+}
+
+div.header{
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100vh;
+
+    transition: all 1s;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+}
+
+div.sticky{
+    
+    height: 100px;
+}
+
+div.header > img{
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: all 1s;
+}
+
+div.header > div.nav{
+
+    position: relative;
+
+    z-index: 1;
+
+    color: red;
+
+    display: none;
+
+    margin-right: 10px;
+}
+
+div.sticky > div.nav{
+
+    display: block;
+}
+
+div.header > div.nav > ul{
+
+    position: relative;
+
+    display: flex;
+
+    padding-left: 0;
+}
+
+div.header > div.nav > ul > li{
+
+    list-style: none;
+
+    padding: 10px 30px;
+
+    font-size: 36px;
+}
+
+div.header > div.dropDown{
+
+    position: absolute;
+
+    bottom: 10%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    cursor: pointer;
+
+    color: red;
+}
+
+div.sticky > div.dropDown{
+
+    display: none;
+}
