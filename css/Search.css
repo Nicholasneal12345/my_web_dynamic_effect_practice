@@ -1,0 +1,47 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div.all{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+div.all > div.searchContainer{
+    position: relative;
+}
+
+div.all > div.searchContainer > input[type = "text"]{
+    width: 30vw;
+    padding: 5px 2px;
+    outline: none;
+}
+
+div.all > div.searchContainer > ul{
+    position: absolute;
+    left: 0;
+    top: 100%;
+    padding: 0;
+    margin: 0;
+    width: calc(30vw + 6px);
+    border: 1px solid;
+    border-top: none;
+}
+
+div.all > div.searchContainer > ul > li{
+    list-style: none;
+    border-bottom: 1px solid;
+    width: 100%;
+    padding: 10px 0 0;
+}
+
+div.all > div.searchContainer > ul > li > span{
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+}
