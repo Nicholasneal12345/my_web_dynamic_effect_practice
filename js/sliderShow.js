@@ -5,7 +5,9 @@ const preBtn = document.getElementById("preBtn");
 
 const nextBtn = document.getElementById("nextBtn");
 
-let count = 1;
+const contentContainer = document.querySelector("#contentContainer");
+
+let count = 1; 
 
 let sliderImg = document.querySelectorAll("div.sliderInnerContainer > img");
 
@@ -20,9 +22,13 @@ preBtn.addEventListener("click", function(){
         return;
     }
 
+    resetCricle();
+
     count = count - 1;
     
     sliderInnerContainer.style.transform = `translateX(${-sliderImg[0].clientWidth * count}px)`;
+
+    contentContainer.children.item(count).classList.add("clicked");
 
     sliderInnerContainer.style.transition = `transform 0.4s`;
 });
@@ -36,9 +42,13 @@ nextBtn.addEventListener("click", function(){
         return;
     }
 
+    resetCricle();
+
     count = count + 1;
     
     sliderInnerContainer.style.transform = `translateX(${-sliderImg[0].clientWidth * count}px)`;
+
+    contentContainer.children.item(count).classList.add("clicked");
 
     sliderInnerContainer.style.transition = `transform 0.4s`;
 });
@@ -54,6 +64,8 @@ sliderInnerContainer.addEventListener("transitionend", function(){
         sliderInnerContainer.style.transition = `none`;
 
         sliderInnerContainer.style.transform = `translateX(${-sliderImg[0].clientWidth * count}px)`;
+
+        contentContainer.children.item(count).classList.add("clicked");
     }
 
     // 判斷位置是否在最後一張圖片(firstClone)上，如果是的話就停止動畫運作並且跳到跟firstClone一樣的圖片上(lastClone的下一張)
@@ -64,15 +76,44 @@ sliderInnerContainer.addEventListener("transitionend", function(){
         sliderInnerContainer.style.transition = `none`;
 
         sliderInnerContainer.style.transform = `translateX(${-sliderImg[0].clientWidth * count}px)`;
+
+        contentContainer.children.item(count).classList.add("clicked");
     }
 });
 
 // sliderInnerContainer自動運行
 setInterval(function(){
 
+    resetCricle(); // reset下面的圓形圖案
+
     count = count + 1;
     
     sliderInnerContainer.style.transform = `translateX(${-sliderImg[0].clientWidth * count}px)`;
 
+    contentContainer.children.item(count).classList.add("clicked");
+
     sliderInnerContainer.style.transition = `transform 0.4s`;
-}, 5000);
+}, 30000);
+
+// 根據圖片的數量決定原點數量
+for(let i = 0; i < sliderInnerContainer.children.length; i = i + 1){
+
+    if(i === 0 || i === sliderInnerContainer.children.length - 1){
+
+        contentContainer.insertAdjacentHTML("beforeend", `<li class = "outer"></li>`);
+    }else{
+
+        contentContainer.insertAdjacentHTML("beforeend", `<li></li>`)
+    }
+}
+
+contentContainer.children.item(count).classList.add("clicked");
+
+function resetCricle(){
+    
+    for(let i = 0; i < contentContainer.children.length; i = i + 1){
+        if(contentContainer.children.item(i).classList.contains("clicked")){
+            contentContainer.children.item(i).classList.remove("clicked");
+        }
+    }
+}
