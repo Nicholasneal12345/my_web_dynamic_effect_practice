@@ -18,6 +18,7 @@ div.accordion_container > div.accordion_item > div.accordion_title{
     padding: 5px;
     position: relative;
     width: calc(100% - 10px);
+    border-bottom: 3px solid black;
 }
 
 div.accordion_container > div.accordion_item > div.accordion_title:hover{
