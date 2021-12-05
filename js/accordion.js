@@ -14,7 +14,7 @@ window.addEventListener("load", function(){
     
             // 使用js根據p標籤的高度來進行高度判斷，避免把高度寫死。
             if(this.nextElementSibling.classList.contains("open")){
-                this.nextElementSibling.style.height = `${this.nextElementSibling.children[0].offsetHeight}px`;
+                this.nextElementSibling.style.height = `${this.nextElementSibling.children[0].offsetHeight * 1.5}px`;console.log(this.nextElementSibling, this.nextElementSibling.children[0].offsetHeight);
             }else{
                 this.nextElementSibling.style.height = 0;
             }

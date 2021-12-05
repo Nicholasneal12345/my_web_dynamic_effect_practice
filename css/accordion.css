@@ -15,9 +15,9 @@ div.accordion_container{
 div.accordion_container > div.accordion_item > div.accordion_title{
     background-color: blue;
     color: white;
-    padding: 5px;
+    padding: 10px;
     position: relative;
-    width: calc(100% - 10px);
+    width: 100%;
     border-bottom: 3px solid black;
 }
 
@@ -39,6 +39,8 @@ div.accordion_container > div.accordion_item > div.accordion_content{
     background-color: lightblue;
     color: black;
     padding: 0;
+    padding-left: 10px;
+    padding-right: 10px;
     width: 100%;
     height: 0;
     overflow: hidden;
