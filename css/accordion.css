@@ -13,15 +13,18 @@ div.accordion_container{
 
 div.accordion_container > div.accordion_item > div.accordion_title{
     background-color: blue;
-    color: white;
+    font-weight: bold;
     padding: 10px;
     position: relative;
     width: 100%;
     border-bottom: 3px solid black;
+    border-top: 3px solid black;
 }
 
 div.accordion_container > div.accordion_item > div.accordion_title:hover{
     cursor: pointer;
+    background-color: lightblue;
+    color: white;
 }
 
 div.accordion_container > div.accordion_item > div.accordion_title::before{
