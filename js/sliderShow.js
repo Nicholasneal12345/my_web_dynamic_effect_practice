@@ -20,17 +20,27 @@ preBtn.addEventListener("click", function(){
     if(count === 0){
 
         return;
+    }else if(count === 1){
+        resetCricle();
+
+        count = count - 1;
+        
+        sliderInnerContainer.style.transform = `translateX(${-sliderImg[0].clientWidth * count}px)`;
+
+        contentContainer.children.item(5).classList.add("clicked");
+
+        sliderInnerContainer.style.transition = `transform 0.4s`;
+    }else{
+        resetCricle();
+
+        count = count - 1;
+        
+        sliderInnerContainer.style.transform = `translateX(${-sliderImg[0].clientWidth * count}px)`;
+
+        contentContainer.children.item(count).classList.add("clicked");
+
+        sliderInnerContainer.style.transition = `transform 0.4s`;   
     }
-
-    resetCricle();
-
-    count = count - 1;
-    
-    sliderInnerContainer.style.transform = `translateX(${-sliderImg[0].clientWidth * count}px)`;
-
-    contentContainer.children.item(count).classList.add("clicked");
-
-    sliderInnerContainer.style.transition = `transform 0.4s`;
 });
 
 // 點擊下一張按鈕
@@ -40,17 +50,27 @@ nextBtn.addEventListener("click", function(){
     if(count === sliderImg.length - 1){
 
         return;
+    }else if(count === sliderImg.length - 2){
+        resetCricle();
+
+        count = count + 1;
+        
+        sliderInnerContainer.style.transform = `translateX(${-sliderImg[0].clientWidth * count}px)`;
+
+        contentContainer.children.item(1).classList.add("clicked");
+
+        sliderInnerContainer.style.transition = `transform 0.4s`;
+    }else{
+        resetCricle();
+
+        count = count + 1;
+        
+        sliderInnerContainer.style.transform = `translateX(${-sliderImg[0].clientWidth * count}px)`;
+
+        contentContainer.children.item(count).classList.add("clicked");
+
+        sliderInnerContainer.style.transition = `transform 0.4s`;
     }
-
-    resetCricle();
-
-    count = count + 1;
-    
-    sliderInnerContainer.style.transform = `translateX(${-sliderImg[0].clientWidth * count}px)`;
-
-    contentContainer.children.item(count).classList.add("clicked");
-
-    sliderInnerContainer.style.transition = `transform 0.4s`;
 });
 
 // sliderInnerContainer每次移動動畫結束後會觸發的事件處理function
@@ -64,8 +84,6 @@ sliderInnerContainer.addEventListener("transitionend", function(){
         sliderInnerContainer.style.transition = `none`;
 
         sliderInnerContainer.style.transform = `translateX(${-sliderImg[0].clientWidth * count}px)`;
-
-        contentContainer.children.item(count).classList.add("clicked");
     }
 
     // 判斷位置是否在最後一張圖片(firstClone)上，如果是的話就停止動畫運作並且跳到跟firstClone一樣的圖片上(lastClone的下一張)
@@ -76,24 +94,34 @@ sliderInnerContainer.addEventListener("transitionend", function(){
         sliderInnerContainer.style.transition = `none`;
 
         sliderInnerContainer.style.transform = `translateX(${-sliderImg[0].clientWidth * count}px)`;
-
-        contentContainer.children.item(count).classList.add("clicked");
     }
 });
 
 // sliderInnerContainer自動運行
 setInterval(function(){
 
-    resetCricle(); // reset下面的圓形圖案
+    if(count === sliderImg.length - 2){
+        resetCricle(); // reset下面的圓形圖案
 
-    count = count + 1;
-    
-    sliderInnerContainer.style.transform = `translateX(${-sliderImg[0].clientWidth * count}px)`;
+        count = count + 1;
+        
+        sliderInnerContainer.style.transform = `translateX(${-sliderImg[0].clientWidth * count}px)`;
 
-    contentContainer.children.item(count).classList.add("clicked");
+        contentContainer.children.item(1).classList.add("clicked");
 
-    sliderInnerContainer.style.transition = `transform 0.4s`;
-}, 30000);
+        sliderInnerContainer.style.transition = `transform 0.4s`;
+    }else{
+        resetCricle(); // reset下面的圓形圖案
+
+        count = count + 1;
+        
+        sliderInnerContainer.style.transform = `translateX(${-sliderImg[0].clientWidth * count}px)`;
+
+        contentContainer.children.item(count).classList.add("clicked");
+
+        sliderInnerContainer.style.transition = `transform 0.4s`;
+    }
+}, 5000);
 
 // 根據圖片的數量決定原點數量
 for(let i = 0; i < sliderInnerContainer.children.length; i = i + 1){
