@@ -12,19 +12,21 @@ div.accordion_container{
 }
 
 div.accordion_container > div.accordion_item > div.accordion_title{
-    background-color: blue;
+    background-color: #EEE5CD;
     font-weight: bold;
     padding: 10px;
     position: relative;
     width: 100%;
-    border-bottom: 3px solid black;
-    border-top: 3px solid black;
+    border-bottom: 1px solid #FFFDEF;
+    border-top: 1px solid #FFFDEF;
 }
 
 div.accordion_container > div.accordion_item > div.accordion_title:hover{
     cursor: pointer;
-    background-color: lightblue;
-    color: white;
+    background-color: #FFFDEF;
+    color: #BBD6AE;
+    border-bottom: 1px solid #EEE5CD;
+    border-top: 1px solid #EEE5CD;
 }
 
 div.accordion_container > div.accordion_item > div.accordion_title::before{
@@ -38,7 +40,7 @@ div.accordion_container > div.accordion_item > div.openTitle::before{
 }
 
 div.accordion_container > div.accordion_item > div.accordion_content{
-    background-color: lightblue;
+    background-color: #FFFDEF;
     color: black;
     padding: 0;
     padding-left: 10px;
@@ -47,4 +49,8 @@ div.accordion_container > div.accordion_item > div.accordion_content{
     height: 0;
     overflow: hidden;
     transition: height 0.4s;
+}
+
+div.accordion_container > div.accordion_item > div.accordion_content > p {
+    margin: 0;
 }
