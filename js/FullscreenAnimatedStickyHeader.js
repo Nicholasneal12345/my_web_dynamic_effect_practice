@@ -11,7 +11,7 @@
         
         header.classList.add("sticky", window.scrollY > 0);
 
-        homeFullImage.setAttribute("src", "../image/FullscreenAnimatedStickyHeader/plants-gf423cd171_1280.jpg");
+        homeFullImage.setAttribute("src", "../image/FullscreenAnimatedStickyHeader/universe-gae6585167_640.jpg");
 
         window.scrollTo(0, 0); //鎖住畫面，讓他做到一次性滑動
     });
