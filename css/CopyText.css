@@ -5,8 +5,7 @@ div.copyContainer{
     align-items: center;
 }
 
-input[type = "text"]{
-    border-radius: 10px 0 0 10px; 
+input[type = "text"]{ 
     outline: none; border: 1px solid; 
     padding: 6.5px;
 }
@@ -14,6 +13,6 @@ input[type = "text"]{
 button[value = "Copy"]{
     outline: none; 
     border: 1px solid; 
-    border-radius: 0 10px 10px 0; 
+    margin-left: 16px;
     padding: 5px; cursor: pointer;
 }
