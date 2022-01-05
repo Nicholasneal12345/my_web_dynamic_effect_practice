@@ -121,7 +121,7 @@ setInterval(function(){
 
         sliderInnerContainer.style.transition = `transform 0.4s`;
     }
-}, 5000);
+}, 15000);
 
 // 根據圖片的數量決定原點數量
 for(let i = 0; i < sliderInnerContainer.children.length; i = i + 1){
